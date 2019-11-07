@@ -4,9 +4,12 @@ package java_basal_konwledge;
 import java.io.*;
 import java.util.Calendar;
 import java.util.Comparator;
+import java.util.LinkedList;
 
 public class TxtFileTest
 {
+    private LinkedList<Integer>[] adj; // 邻接表
+
     public static void main(String[] args) throws IOException
     {
         File f = new File("g:/examples");

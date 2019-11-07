@@ -4,7 +4,7 @@ public class Chapter14
 {
     public static void main(String[] args)
     {
-        Runnable r = new Runnable()
+        Runnable r = new Runnable() // 这是一个匿名类
         {
             @Override
             public void run()

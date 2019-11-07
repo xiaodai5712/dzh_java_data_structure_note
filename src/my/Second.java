@@ -1,11 +1,10 @@
 package my;
 
-import java.util.ArrayList;
-import java.util.Scanner;
+import java.util.*;
 
 public class Second
 {
-    public String id;
+    public String id = "ddd";
     public MyTest2 a;
     public Second()
     {
@@ -29,8 +28,12 @@ public class Second
 //            }
             System.out.print(i + ", ");
         }
-
+        ArrayList<String> strings = new ArrayList<>();
+        List<String> s;
+        LinkedList<String> a;
+        AbstractCollection<String> b;
     }
+
 
 
 
