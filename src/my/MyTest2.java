@@ -46,5 +46,10 @@ public class MyTest2
     {
         System.out.println("测试 protected");
     }
+    public MyTest2()
+    {
+        System.out.println("wouigdjfkdsafhj ");
+    }
+
 
 }

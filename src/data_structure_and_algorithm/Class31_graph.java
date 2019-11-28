@@ -1,11 +1,12 @@
 package data_structure_and_algorithm;
 
+import java.beans.Visibility;
 import java.util.LinkedList;
 import java.util.Queue;
 
 public class Class31_graph
 {
-    // 31
+    // 数据结构与算法之美 31
     public static void main(String[] args)
     {
         Graph graph = new Graph(5);
@@ -15,6 +16,7 @@ public class Class31_graph
     { // 无向图
         private int v; // 顶点的个数
         private LinkedList<Integer>[] adj; // 邻接表
+        boolean found ;
 
         public Graph(int v)
         {
@@ -75,9 +77,41 @@ public class Class31_graph
             }
             System.out.print(t + " ");
         }
+
+        // DFS Depth First Search
+        private void Dfs(int s,int t)
+        {
+            found = false;
+            boolean[] visited = new boolean[v];
+            int[] prev = new int[v];
+            for(int i = 0; i < v; i ++)
+            {
+                prev[i] = -1;
+            }
+            recurDfs(s,t,visited,prev);
+            print(prev,s,t);
+        }
+        private void recurDfs(int w, int t, boolean[] visited,int[] prev)
+        {
+            if(found) return;
+            visited[w] = true;
+            if(w == t)
+            {
+                found = true;
+                return;
+            }
+            for(int i = 0; i < adj[w].size(); i ++)
+            {
+                int q = adj[w].get(i);
+                if(!visited[q])
+                {
+                    prev[q] = w;
+                    recurDfs(w,t,visited,prev);
+                }
+            }
+        }
     }
 
-    // DFS Depth First Search
 
 
 }

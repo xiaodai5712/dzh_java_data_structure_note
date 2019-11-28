@@ -12,10 +12,10 @@ import java.util.SortedSet;
 import java.util.TreeSet;
 import java.util.concurrent.TimeUnit;
 
-public class MyTest implements Serializable
+public class MyTest  extends  MyTest2 implements Serializable
 {
     static Integer count = 0;
-    public static void main(String[] args) throws InterruptedException
+    public static void main(String[] args)
     {
         // 运行的快剪辑 Ctrl Shift F10
 //        int[] arr = new int[200];
@@ -57,31 +57,33 @@ public class MyTest implements Serializable
 //        }
 
 
-        Thread threadA = new Thread(new Runnable()
+        Thread threadA = new Thread(() ->
         {
-            @Override
-            public void run()
-            {
-                System.out.println(Thread.currentThread().getName() + "开始");
-                   for(int i = count ; i < 30; i++)
+            System.out.println(Thread.currentThread().getName() + "开始");
+               for(int i = count ; i < 30; i++)
+               {
+                   try
                    {
-                       try
-                       {
-                           Thread.sleep(500);
-                       } catch (InterruptedException e)
-                       {
-                           e.printStackTrace();
-                       }
-                       System.out.print(count++ + ",");
+                       Thread.sleep(500);
+                   } catch (InterruptedException e)
+                   {
+                       e.printStackTrace();
                    }
-                   System.out.println();
-                   System.out.println("工作线程exit");
-            }
+                   System.out.print(count++ + ",");
+               }
+               System.out.println();
+               System.out.println("工作线程exit");
         },"二狗子");
         while (count <= 50)
         {
 
-            Thread.sleep(200);
+            try
+            {
+                Thread.sleep(200);
+            } catch (InterruptedException e)
+            {
+                e.printStackTrace();
+            }
             System.out.print(count + ",");
                 count ++;
                 if(count == 20)
@@ -204,6 +206,13 @@ public class MyTest implements Serializable
         }
 
     }
+
+
+    public MyTest()
+    {
+        System.out.println("来自MyTest");
+    }
+
 
 
 }

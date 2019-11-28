@@ -8,8 +8,8 @@ public class Class11
     public static void main(String[] args)
     {
         int[] arr = {5,4,1,9,6,3,2,7,0,8};
-        int[] arr1 = selectSort(arr);
-        for(int i : arr1)
+         bubbleSort(arr);
+        for(int i : arr)
         {
             System.out.print(i + ",");
         }
@@ -44,7 +44,7 @@ public class Class11
 
     }
     // 冒泡排序,从大到小
-    private static int[] bubbleSort(int[] arr)
+    private static void bubbleSort(int[] arr)
     {
 //        int[] arr1 = new int[arr.length];
 
@@ -61,7 +61,7 @@ public class Class11
                 }
             }
         }
-        return arr;
+//        return arr;
 
     }
     // 插入排序，a 表示数组，n 表示数组大小
