@@ -1,17 +1,19 @@
 package exercise_review;
 
-import java_basal_konwledge.TestFile;
 
-import javax.sound.midi.MidiFileFormat;
+import java.util.Arrays;
 
 public class Sorts
 {
     public static void main(String[] args)
     {
         int[] arr = {9,6,3,1,2,7,4,6,11,8,5,9};
-        int[]arr1 = {6,5,4,3,2,1,0};
-        quickSort(arr1);
-        printArr(arr1);
+//        int[]arr1 = {6,5,4,3,2,1,0};
+//        quickSort(arr1);
+//        printArr(arr1);
+        System.out.println(Arrays.toString(arr));
+        int a = 1 / 3;
+        System.out.println(" 1 / 3 = " + a);
 
     }
 

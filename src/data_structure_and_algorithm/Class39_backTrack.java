@@ -44,7 +44,7 @@ public class Class39_backTrack
                 if(result[i] == rightUp) return false;
 
             }
-            leftUp++; rightUp++;
+            leftUp--; rightUp++;
         }
         return true;
     }
