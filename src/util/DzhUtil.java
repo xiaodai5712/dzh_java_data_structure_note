@@ -13,4 +13,33 @@ public class DzhUtil
         }
         return arr;
     }
+
+    public static<T extends Comparable<T>> T findMax(T[] arr)
+    {
+        int n = arr.length;
+        if(n <= 1) return arr[0];
+        T max = arr[0];
+        for (int i = 1; i <n; i++)
+        {
+            if(arr[i].compareTo(max)>0)
+            {
+                max = arr[i];
+            }
+        }
+        return max;
+    }
+    public static<T extends Comparable<T>> T findMin(T[] arr)
+    {
+        int n = arr.length;
+        if(n <= 1) return arr[0];
+        T min = arr[0];
+        for (int i = 1; i <n; i++)
+        {
+            if(arr[i].compareTo(min)<0)
+            {
+                min = arr[i];
+            }
+        }
+        return min;
+    }
 }

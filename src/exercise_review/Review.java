@@ -1,11 +1,5 @@
 package exercise_review;
 
-
-import com.sun.javafx.geom.Edge;
-import com.sun.javafx.tk.PrintPipeline;
-
-import java.awt.*;
-import java.util.EnumSet;
 import java.util.LinkedList;
 
 
